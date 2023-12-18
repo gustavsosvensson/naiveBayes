@@ -1,7 +1,7 @@
 from matplotlib import pyplot as plt
 
 
-def figure(y_test, y_pred):
+def plot_figure(y_test, y_pred):
     plt.figure(figsize=(10, 6))
     plt.bar(range(len(y_test)), y_test, label='Actual Price Increase', color='blue', alpha=0.7)
     plt.title('Actual Price Increase')

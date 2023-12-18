@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from matplotlib.pyplot import axes
 from sklearn.metrics import accuracy_score
 from src.get_data import get_and_prepare_data
-from src.figure import figure
+from src.figure import plot_figure
 from src.prediction import prediction
 import mplfinance as mpf
 
@@ -35,7 +35,7 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy * 100:.2f}%")
 
 # Create a bar chart for actual outcomes
-figure1, figure2, figure3 = figure(y_test, y_pred)
+figure1, figure2, figure3 = plot_figure(y_test, y_pred)
 
 # ... (Your existing code for data preprocessing and model training)
 
