@@ -140,6 +140,28 @@ files = [
 ]
 
 [[package]]
+name = "cmdstanpy"
+version = "1.2.0"
+description = "Python interface to CmdStan"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "cmdstanpy-1.2.0-py3-none-any.whl", hash = "sha256:bbfe7b5fd64be0f559ca6496c3302b696497c1477dd73f106c1c601ea7e0550d"},
+    {file = "cmdstanpy-1.2.0.tar.gz", hash = "sha256:bdf55ab76f9eea01763b8990a56ff55d03e69ec31d9613fdbbe4c452126ff1bb"},
+]
+
+[package.dependencies]
+numpy = ">=1.21"
+pandas = "*"
+stanio = ">=0.3.0,<0.4.0"
+tqdm = "*"
+
+[package.extras]
+all = ["xarray"]
+docs = ["matplotlib", "numpydoc", "sphinx", "sphinx-gallery", "sphinx-rtd-theme"]
+tests = ["flake8", "mypy", "pylint", "pytest", "pytest-cov", "pytest-order", "tqdm", "xarray"]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -695,6 +717,54 @@ pyparsing = ">=2.3.1"
 python-dateutil = ">=2.7"
 
 [[package]]
+name = "mpf"
+version = "0.56.2"
+description = "The Mission Pinball Framework"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mpf-0.56.2-py3-none-any.whl", hash = "sha256:12c6cd3d1627a02acc1b1437d47d3ea3e8753d6bb9cc89b99786b352aded60fb"},
+    {file = "mpf-0.56.2.tar.gz", hash = "sha256:4d5efaf2ce376b6a7cea0d286675b0d11b24945c64dc9dc8f7241569141f22fe"},
+]
+
+[package.dependencies]
+packaging = "*"
+psutil = "5.9.4"
+pyserial = "3.5"
+pyserial-asyncio = [
+    {version = "0.5", markers = "platform_system != \"Windows\""},
+    {version = "0.4", markers = "platform_system == \"Windows\""},
+]
+"ruamel.yaml" = "0.15.42"
+sortedcontainers = "2.3.0"
+
+[package.extras]
+all = ["apigpio-mpf (==0.0.4)", "asciimatics (==1.12.0)", "grpcio (==1.34.0)", "grpcio-tools (==1.34.0)", "irc (==19.0.1)", "prompt-toolkit (==3.0.33)", "protobuf (==3.14.0)", "python-osc (==1.7.4)", "pyusb (==1.1.0)", "requests (==2.28.2)", "smbus2-asyncio (==0.0.5)", "terminaltables (==3.1.0)"]
+cli = ["asciimatics (==1.12.0)", "prompt-toolkit (==3.0.33)", "terminaltables (==3.1.0)"]
+crash-reporter = ["requests (==2.28.2)"]
+irc = ["irc (==19.0.1)"]
+linux-i2c = ["smbus2-asyncio (==0.0.5)"]
+osc = ["python-osc (==1.7.4)"]
+pin2dmd = ["pyusb (==1.1.0)"]
+rpi = ["apigpio-mpf (==0.0.4)"]
+vpe = ["grpcio (==1.34.0)", "grpcio-tools (==1.34.0)", "protobuf (==3.14.0)"]
+
+[[package]]
+name = "mplfinance"
+version = "0.12.10b0"
+description = "Utilities for the visualization, and visual analysis, of financial data"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mplfinance-0.12.10b0-py3-none-any.whl", hash = "sha256:76d3b095f05ff35de730751649de063bea4064d0c49b21b6182c82997a7f52bb"},
+    {file = "mplfinance-0.12.10b0.tar.gz", hash = "sha256:7da150b5851aa5119ad6e06b55e48338b619bb6773f1b85df5de67a5ffd917bf"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+pandas = "*"
+
+[[package]]
 name = "multitasking"
 version = "0.0.11"
 description = "Non-blocking Python methods using decorators"
@@ -922,6 +992,32 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
+name = "psutil"
+version = "5.9.4"
+description = "Cross-platform lib for process and system monitoring in Python."
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+files = [
+    {file = "psutil-5.9.4-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:c1ca331af862803a42677c120aff8a814a804e09832f166f226bfd22b56feee8"},
+    {file = "psutil-5.9.4-cp27-cp27m-manylinux2010_i686.whl", hash = "sha256:68908971daf802203f3d37e78d3f8831b6d1014864d7a85937941bb35f09aefe"},
+    {file = "psutil-5.9.4-cp27-cp27m-manylinux2010_x86_64.whl", hash = "sha256:3ff89f9b835100a825b14c2808a106b6fdcc4b15483141482a12c725e7f78549"},
+    {file = "psutil-5.9.4-cp27-cp27m-win32.whl", hash = "sha256:852dd5d9f8a47169fe62fd4a971aa07859476c2ba22c2254d4a1baa4e10b95ad"},
+    {file = "psutil-5.9.4-cp27-cp27m-win_amd64.whl", hash = "sha256:9120cd39dca5c5e1c54b59a41d205023d436799b1c8c4d3ff71af18535728e94"},
+    {file = "psutil-5.9.4-cp27-cp27mu-manylinux2010_i686.whl", hash = "sha256:6b92c532979bafc2df23ddc785ed116fced1f492ad90a6830cf24f4d1ea27d24"},
+    {file = "psutil-5.9.4-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:efeae04f9516907be44904cc7ce08defb6b665128992a56957abc9b61dca94b7"},
+    {file = "psutil-5.9.4-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:54d5b184728298f2ca8567bf83c422b706200bcbbfafdc06718264f9393cfeb7"},
+    {file = "psutil-5.9.4-cp36-abi3-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:16653106f3b59386ffe10e0bad3bb6299e169d5327d3f187614b1cb8f24cf2e1"},
+    {file = "psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:54c0d3d8e0078b7666984e11b12b88af2db11d11249a8ac8920dd5ef68a66e08"},
+    {file = "psutil-5.9.4-cp36-abi3-win32.whl", hash = "sha256:149555f59a69b33f056ba1c4eb22bb7bf24332ce631c44a319cec09f876aaeff"},
+    {file = "psutil-5.9.4-cp36-abi3-win_amd64.whl", hash = "sha256:fd8522436a6ada7b4aad6638662966de0d61d241cb821239b2ae7013d41a43d4"},
+    {file = "psutil-5.9.4-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:6001c809253a29599bc0dfd5179d9f8a5779f9dffea1da0f13c53ee568115e1e"},
+    {file = "psutil-5.9.4.tar.gz", hash = "sha256:3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"},
+]
+
+[package.extras]
+test = ["enum34", "ipaddress", "mock", "pywin32", "wmi"]
+
+[[package]]
 name = "pyparsing"
 version = "3.1.1"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -934,6 +1030,48 @@ files = [
 
 [package.extras]
 diagrams = ["jinja2", "railroad-diagrams"]
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+description = "Python Serial Port Extension"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"},
+    {file = "pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"},
+]
+
+[package.extras]
+cp2110 = ["hidapi"]
+
+[[package]]
+name = "pyserial-asyncio"
+version = "0.4"
+description = "Python Serial Port Extension - Asynchronous I/O support"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyserial-asyncio-0.4.tar.gz", hash = "sha256:c40677a8874d8c24d4423a97498746de776f6dbcd0efbb8fa43dcf011a589aee"},
+    {file = "pyserial_asyncio-0.4-py3-none-any.whl", hash = "sha256:861d975029498e777a67c6d6d392e20b84a79c01608f3778c978d0106467c8f8"},
+]
+
+[package.dependencies]
+pyserial = "*"
+
+[[package]]
+name = "pyserial-asyncio"
+version = "0.5"
+description = "Python Serial Port Extension - Asynchronous I/O support"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyserial-asyncio-0.5.tar.gz", hash = "sha256:1641e5433a866eeaf6464b3ab88b741e7a89dd8cd0f851b3343b15f425138d33"},
+    {file = "pyserial_asyncio-0.5-py3-none-any.whl", hash = "sha256:4cf1e97d92ae239fe104d76a3a42074c771b7da17ed89aea3c0251c16c950d3e"},
+]
+
+[package.dependencies]
+pyserial = "*"
 
 [[package]]
 name = "pytest"
@@ -1002,6 +1140,38 @@ urllib3 = ">=1.21.1,<3"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "ruamel-yaml"
+version = "0.15.42"
+description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ruamel.yaml-0.15.42-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:68f43e8da5570817ceb0d7c4b7c6cb3a129264879a938667868fb596f606b405"},
+    {file = "ruamel.yaml-0.15.42-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:ee62ba4e969c1820ebbc77980cfc85033493d9010eb2c4a472add21652163354"},
+    {file = "ruamel.yaml-0.15.42-cp27-cp27m-win32.whl", hash = "sha256:c4e6faa15a59660beec81a498d170422dc4b98b9e925c3809fc9144e8ce7aaf5"},
+    {file = "ruamel.yaml-0.15.42-cp27-cp27m-win_amd64.whl", hash = "sha256:8033c78232ef55a728b310ee6b2f7e27346c5e4a2f10170620da5972282147f2"},
+    {file = "ruamel.yaml-0.15.42-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:14abaf931ff86e5180f61d81ed23e49d8c9cb64bbae0fa3a54f9e45b1447e5ab"},
+    {file = "ruamel.yaml-0.15.42-cp34-cp34m-macosx_10_6_intel.whl", hash = "sha256:b5c1fbecfde1c331d865e1d44a0dbafe82ae980bcb1db0bbf4c36d6ea682c6ee"},
+    {file = "ruamel.yaml-0.15.42-cp34-cp34m-manylinux1_x86_64.whl", hash = "sha256:c4407edfa83ebbf15de86b6dbbbd577089fcb6024262276afcd3e6592accecfd"},
+    {file = "ruamel.yaml-0.15.42-cp35-cp35m-macosx_10_6_intel.whl", hash = "sha256:256ca04871414e3c755bea7f90e2c96b0efc3e6937a334f7d134f40b4e6b03d7"},
+    {file = "ruamel.yaml-0.15.42-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:70303c373ee4842bf62bd5cf32e0fc2f00dbed7276883c4f8258d4e7813fd79e"},
+    {file = "ruamel.yaml-0.15.42-cp35-cp35m-win32.whl", hash = "sha256:50d85812c35f918bf42c307f3c37e49a4c6fe029dee1a9941df7541c3c2c70b5"},
+    {file = "ruamel.yaml-0.15.42-cp35-cp35m-win_amd64.whl", hash = "sha256:25589731d69fd5359be270bb319a5f4c42aeefc2f7f38ee9e30a66cdc632f934"},
+    {file = "ruamel.yaml-0.15.42-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:4c23e708a8e9e654ccbf71cc5ffb8cc70a18748940e7efb504f04d3a7b097ad1"},
+    {file = "ruamel.yaml-0.15.42-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:627d0837da895747303c837e658d35743a8057338850e203a8d1dbf21337617c"},
+    {file = "ruamel.yaml-0.15.42-cp36-cp36m-win32.whl", hash = "sha256:bf91a66dfd5b93821834c5a4e02fcd74f0459110f2f45742699983733f1b48f8"},
+    {file = "ruamel.yaml-0.15.42-cp36-cp36m-win_amd64.whl", hash = "sha256:83714248b14f1878d847a5b6a706c379808eaa6dcdda9ce25d7aedf547d705f2"},
+    {file = "ruamel.yaml-0.15.42-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:5e0744b2db88a12dc95b54fdb0143a4e6613019b133362d6785ae28036545b6f"},
+    {file = "ruamel.yaml-0.15.42-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:ac113cd488ecbb9b923152f87cc9baec2eac7fe853182c60c07772d4cd11df46"},
+    {file = "ruamel.yaml-0.15.42-py3-none-any.whl", hash = "sha256:d30b41102aba97ebb225800549893b4b253a2a2c2d514c25781b0e69903e8748"},
+    {file = "ruamel.yaml-0.15.42.tar.gz", hash = "sha256:545f06c9b379fe0d6ea9ff1a9ea2f792b7276281b605f6e868abbf507674d887"},
+]
+
+[package.extras]
+docs = ["ryd"]
+jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
 
 [[package]]
 name = "scikit-learn"
@@ -1104,6 +1274,17 @@ files = [
 ]
 
 [[package]]
+name = "sortedcontainers"
+version = "2.3.0"
+description = "Sorted Containers -- Sorted List, Sorted Dict, Sorted Set"
+optional = false
+python-versions = "*"
+files = [
+    {file = "sortedcontainers-2.3.0-py2.py3-none-any.whl", hash = "sha256:37257a32add0a3ee490bb170b599e93095eed89a55da91fa9f48753ea12fd73f"},
+    {file = "sortedcontainers-2.3.0.tar.gz", hash = "sha256:59cc937650cf60d677c16775597c89a960658a09cf7c1a668f86e1e4464b10a1"},
+]
+
+[[package]]
 name = "soupsieve"
 version = "2.5"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -1113,6 +1294,23 @@ files = [
     {file = "soupsieve-2.5-py3-none-any.whl", hash = "sha256:eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"},
     {file = "soupsieve-2.5.tar.gz", hash = "sha256:5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"},
 ]
+
+[[package]]
+name = "stanio"
+version = "0.3.0"
+description = ""
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "stanio-0.3.0-py3-none-any.whl", hash = "sha256:2d34b5ebe9ad8fcd137437209bf4b53846d88dbe933441aca5d83fd32f9b0c7e"},
+    {file = "stanio-0.3.0.tar.gz", hash = "sha256:0c504ae671b8d526a1da71185ac02a2775508ffe6d3db91f242eac85bcf6046f"},
+]
+
+[package.dependencies]
+numpy = "*"
+
+[package.extras]
+test = ["pandas", "pytest", "pytest-cov"]
 
 [[package]]
 name = "threadpoolctl"
@@ -1145,6 +1343,26 @@ files = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
+
+[[package]]
+name = "tqdm"
+version = "4.66.1"
+description = "Fast, Extensible Progress Meter"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tqdm-4.66.1-py3-none-any.whl", hash = "sha256:d302b3c5b53d47bce91fea46679d9c3c6508cf6332229aa1e7d8653723793386"},
+    {file = "tqdm-4.66.1.tar.gz", hash = "sha256:d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["pytest (>=6)", "pytest-cov", "pytest-timeout", "pytest-xdist"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
 
 [[package]]
 name = "tzdata"
@@ -1226,4 +1444,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "08d4b2393d40b3ddfbfae1a82958f370642d6362dd8a7c71a9043c0dd384b047"
+content-hash = "90642c8cbd5fa856e1feea4f7e32e2fa8ac8db41780cb94f3533b1479486b4e6"

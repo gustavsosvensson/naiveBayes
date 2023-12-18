@@ -15,6 +15,9 @@ yfinance = "^0.2.33"
 matplotlib = "^3.8.2"
 timedelta = "^2020.12.3"
 pytest = "^7.4.3"
+mplfinance = "^0.12.10b0"
+mpf = "^0.56.2"
+cmdstanpy = "^1.2.0"
 
 
 [build-system]

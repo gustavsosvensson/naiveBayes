@@ -19,3 +19,4 @@ def test_get_and_prepare_data():
     # Assert that 'Price_Increase' column only contains 0 or 1 values
     assert all((stock_data['Price_Increase'] == 0) | (stock_data['Price_Increase'] == 1))
 
+

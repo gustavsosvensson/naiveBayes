@@ -1,16 +1,32 @@
-
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import mean_squared_error
-import matplotlib.pyplot as plt
+import mplfinance
+from matplotlib import pyplot as plt
+from matplotlib.pyplot import axes
 from sklearn.metrics import accuracy_score
-
 from src.get_data import get_and_prepare_data
+from src.figure import figure
 from src.prediction import prediction
+import mplfinance as mpf
 
-# Get data
-stock_data = get_and_prepare_data(stock_symbol="AAPL", start_date="2022-12-14", end_date="2023-11-14")
+# This is a stock predictive model using the Gaussian Naive Bayes Classifiers,
+# thus it generates a prediction of the stock, whether it increases or decreases (1 for the former, 0 for the latter).
+# The model genertes its results from the stocks rate of return (RoR), a predicted High Yield would produce a 1, if not a 0
+# Lastly the model produces a Mean Square error (MSE), representing the models accuracy during the specified testing period.
+# MSE tracks the discrepancy between model results and the actual result (AR/PR), the goal being 1 (100%)
+
+# Possible addiotns to the features:
+# EPS
+# Net assets per share
+# Capital reserve per share
+# Roe
+# Operating Profit Ratio
+# ROA
+# Debt Asset ratio
+# total asset turnover
+# NEt assets Growth Rate
+# ROIC
+
+# Alternative action can be to add the accuracy for increasing stock and respectively decreasing value. 
+stock_data = get_and_prepare_data(stock_symbol="NVDA", start_date="2022-12-14", end_date="2023-11-14")
 
 y_pred, X_train, X_test, y_train, y_test = prediction(stock_data)
 
@@ -19,31 +35,14 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy * 100:.2f}%")
 
 # Create a bar chart for actual outcomes
-plt.figure(figsize=(10, 6))
-plt.bar(range(len(y_test)), y_test, label='Actual Price Increase', color='blue', alpha=0.7)
-plt.title('Actual Price Increase')
-plt.xlabel('Sample Index')
-plt.ylabel('Price Increase (1: Increase, 0: Decrease)')
-plt.legend()
-plt.show()
+figure1, figure2, figure3 = figure(y_test, y_pred)
 
-# Create a bar chart for predicted outcomes
-plt.figure(figsize=(10, 6))
-plt.bar(range(len(y_test)), y_pred, label='Predicted Price Increase', color='red', alpha=0.7)
-plt.title('Predicted Price Increase')
-plt.xlabel('Sample Index')
-plt.ylabel('Price Increase (1: Increase, 0: Decrease)')
-plt.legend()
-plt.show()
+# ... (Your existing code for data preprocessing and model training)
 
-plt.figure(figsize=(10,6))
-for i in range(len(y_test)):
-    if y_test.iloc[i] == y_pred[i] or ((y_test[i] == 0) and y_pred[i] == 0):
-        plt.bar(i, y_pred[i], label='Correct Prediction', color='green', alpha=0.7)
-    else:
-        plt.bar(i, 1, label='False Prediction', color='red', alpha=0.7)
-plt.title('Predicted Price correction')
-plt.xlabel('Sample Index')
-plt.ylabel('Price Increase (1: Increase, 0: Decrease)')
+plt.figure(figsize=(12, 6))
+plt.plot(stock_data['Adj Close'], label='Stock Price', color='blue')
+plt.xlabel('Date')
+plt.ylabel('Stock Price')
+plt.title('Stock Price Progression')
 plt.legend()
-plt.show()
+plt.grid(True)
